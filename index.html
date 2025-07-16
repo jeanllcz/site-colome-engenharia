@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colomé Engenharia - Serviços de Engenharia Mecânica e Segurança do Trabalho</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #001a33;
+            --navy-light: #00264d;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1581093450021-4a7360e9a7f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--navy);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 50;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-[var(--navy)] text-white shadow-lg sticky top-0 z-40 border-b border-[var(--navy-light)]">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="Logo_1.png" alt="Logo Colomé Engenharia" class="h-12 w-auto" />
+                <i class="fas fa-cogs text-2xl"></i>
+                <a href="#" class="text-xl font-bold">Colomé Engenharia</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#sobre" class="hover:text-blue-200 transition">Sobre</a>
+                <a href="#servicos" class="hover:text-blue-200 transition">Serviços</a>
+                <a href="#diferenciais" class="hover:text-blue-200 transition">Diferenciais</a>
+                <a href="#contato" class="hover:text-blue-200 transition">Contato</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-900 px-4 py-2">
+            <a href="#sobre" class="block py-2 hover:text-blue-200 transition">Sobre</a>
+            <a href="#servicos" class="block py-2 hover:text-blue-200 transition">Serviços</a>
+            <a href="#diferenciais" class="block py-2 hover:text-blue-200 transition">Diferenciais</a>
+            <a href="#contato" class="block py-2 hover:text-blue-200 transition">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero py-20 md:py-32 border-b border-[var(--navy-light)]">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Soluções em Engenharia Mecânica e Segurança</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Projetos especializados com excelência técnica e compromisso com a segurança</p>
+            <a href="#contato" class="bg-[var(--navy)] hover:bg-[var(--navy-light)] text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block shadow-md">
+                Fale Conosco
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-16 bg-white border-b border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[var(--navy)]">Sobre mim</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="bg-gray-200 rounded-full p-2 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Engenheiro Jivago Colomé" class="rounded-full w-64 h-64 object-cover border-4 border-white">
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text[var(--navy)] mb-2">Formação Profissional</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-graduation-cap text[var(--navy)] mt-1 mr-2"></i>
+                                <span>Engenheiro Mecânico</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-graduation-cap text[var(--navy)] mt-1 mr-2"></i>
+                                <span>Engenheiro de Segurança do Trabalho</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-id-card text[var(--navy)] mt-1 mr-2"></i>
+                                <span>CREA/SC nº 127676</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-[var(--navy)] mb-2">Experiência</h3>
+                        <div class="flex items-start">
+                            <i class="fas fa-briefcase text-blue-900 mt-1 mr-2"></i>
+                            <p>13 anos de atuação na área de engenharia mecânica e de segurança do trabalho</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-[var(--navy)] mb-2">Histórico Profissional</h3>
+                        <p class="text-gray-700">
+                            Com mais de uma década de atuação na área de engenharia mecânica e de segurança do trabalho, especializei-me na liderança de equipes e na gestão de projetos de engenharia e manutenção industrial. Minha missão é impulsionar a melhoria contínua e a inovação em processos e sistemas, sempre com um olhar atento à segurança do trabalho e às normativas vigentes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Section -->
+    <section class="py-16 bg-gray-50 border-b border-gray-200 shadow-inner">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[var(--navy)]">Áreas de Atuação</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-cog text-[var(--navy)] text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Engenharia Mecânica</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Soluções técnicas especializadas em projetos mecânicos, manutenção industrial e otimização de processos.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-hard-hat text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Engenharia de Segurança do Trabalho</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Atendimento às normas regulamentadoras com foco na prevenção de acidentes e promoção da saúde ocupacional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text[var(--navy)]">Serviços Prestados</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg border-2 border-gray-200 hover:border-[var(--navy)] transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-file-alt text-blue-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Projetos e Laudos</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Elaboração de projetos técnicos e laudos especializados em engenharia mecânica e segurança do trabalho.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-search text-blue-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Inspeções e ART</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Realização de inspeções técnicas e emissão de Anotações de Responsabilidade Técnica (ART) para diversos serviços.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-balance-scale text-blue-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Perícias Judiciais</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Assistência técnica especializada em processos judiciais envolvendo questões de engenharia mecânica e segurança.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-exclamation-triangle text-blue-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">NR 12, NR 13 e NR 18</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Adequação às normas regulamentadoras de segurança em máquinas, equipamentos e canteiros de obras.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-tools text-blue-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Reclassificação de Monta</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Serviços especializados em reclassificação de monta de equipamentos industriais e máquinas.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md border border-gray-100 transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-headset text-blue-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold">Assistência Técnica</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Consultoria e suporte técnico especializado para empresas e indústrias da região de Itajaí/SC.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais Section -->
+    <section id="diferenciais" class="py-16 bg-gray-50 border-t-2 border-b-2 border-[var(--navy-light)] shadow-sm">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text[var(--navy)]">O Que Me Diferencia</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-blue-200">
+                    <div class="flex items-start mb-6">
+                        <i class="fas fa-star text-yellow-300 text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Atendimento Personalizado</h3>
+                            <p>
+                                Cada cliente recebe atenção exclusiva, com soluções sob medida para suas necessidades específicas.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start mb-6">
+                        <i class="fas fa-clock text-blue-200 text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Compromisso com Prazos</h3>
+                            <p>
+                                Cumprimento rigoroso dos prazos estabelecidos, garantindo agilidade sem abrir mão da qualidade.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start mb-6">
+                        <i class="fas fa-shield-alt text-green-300 text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Conformidade Normativa</h3>
+                            <p>
+                                Todos os projetos e serviços atendem rigorosamente às normas técnicas e regulamentações vigentes.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fas fa-handshake text-blue-100 text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Transparência e Confiança</h3>
+                            <p>
+                                Relacionamento baseado na ética profissional, transparência e construção de confiança mútua.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-xl italic">
+                        "Mais do que projetos, ofereço confiança e tranquilidade. Na Colomé Engenharia, cada trabalho é abordado com seriedade e soluções eficientes."
+                    </p>
+                    <p class="mt-4 font-semibold">Eng. Jivago Colomé Leal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-16 bg-white border-t-2 border-[var(--navy-light)]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[var(--navy)]">Entre em Contato</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+                <div class="md:w-1/2 bg-gray-50 p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-6 text-[var(--navy)]">Informações de Contato</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-[var(--navy)] mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-medium">Atendimento</h4>
+                                <p class="text-gray-600">Itajaí, SC e região</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-blue-600 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-medium">WhatsApp</h4>
+                                <p class="text-gray-600">(47) 98409-4939</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-blue-600 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-medium">E-mail</h4>
+                                <p class="text-gray-600">atendimento@colomeengenharia.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fab fa-linkedin text-blue-600 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-medium">LinkedIn</h4>
+                                <p class="text-gray-600">linkedin.com/in/jivago-colomé-leal-211ba935</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 bg-gray-50 p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-6 text-[var(--navy)]">Envie uma Mensagem</h3>
+                    
+                    <form action="https://formspree.io/f/mdkdngwr" method="POST" class="space-y-4">
+    <div>
+        <label for="name" class="block text-gray-700 mb-1">Nome</label>
+        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[var(--navy)]" required>
+    </div>
+
+    <div>
+        <label for="email" class="block text-gray-700 mb-1">E-mail</label>
+        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+    </div>
+
+    <div>
+        <label for="phone" class="block text-gray-700 mb-1">Telefone</label>
+        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <div>
+        <label for="subject" class="block text-gray-700 mb-1">Assunto</label>
+        <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            <option value="">Selecione um assunto</option>
+            <option value="engenharia-mecanica">Engenharia Mecânica</option>
+            <option value="seguranca-trabalho">Segurança do Trabalho</option>
+            <option value="projetos">Projetos e Laudos</option>
+            <option value="inspecoes">Inspeções e ART</option>
+            <option value="outros">Outros</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="message" class="block text-gray-700 mb-1">Mensagem</label>
+        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+    </div>
+
+    <button type="submit" class="bg-[var(--navy)] hover:bg-[var(--navy-light)] text-white font-bold py-3 px-6 rounded transition duration-300 w-full shadow-md">
+        Enviar Mensagem
+    </button>
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5547984094939" target="_blank" class="floating-button bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-xl transition duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--navy)] text-white py-8 border-t-4 border-[var(--navy-light)]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-cogs text-xl"></i>
+                        <span class="text-xl font-bold">Colomé Engenharia</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Excelência em Engenharia Mecânica e Segurança do Trabalho</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/jivago-colomé-leal-211ba935" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="mailto:atendimento@colomeengenharia.com.br" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="tel:+5547984094939" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Colomé Engenharia. Todos os direitos reservados.</p>
+                <p class="mt-2">CREA/SC nº 127676</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        // Scroll reveal animation
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .flex.items-start');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animation
+        document.querySelectorAll('.service-card, .flex.items-start').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+        
+        // Run animation on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
